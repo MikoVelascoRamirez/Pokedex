@@ -7,7 +7,7 @@ const searchPokemon = async name =>{
         const response = await request.json();
         return getPokemonType(response)
     } catch {
-        throw new Error('El pokemón no existe, :(');
+        throw new Error('El pokemón no existe :(');
     }
 
 }

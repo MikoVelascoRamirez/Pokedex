@@ -9,13 +9,23 @@ const imageDisplay = document.querySelector('#poke-result');
 const pokeName = document.querySelector('#poke-result-name');
 const otherStats = document.getElementById('other-stats').children;
 const containerTypes = document.getElementById('types');
+const movesPanel = Array.from(document.querySelector("#moves-panel").children);
+const poke_evolutions = document.getElementById("poke-evolutions");
 
 document.addEventListener("DOMContentLoaded", () => {
-    btnSearch.addEventListener("click", () => dataResults(inputSearch.value))
+    btnSearch.addEventListener("click", () => {
+        if(inputSearch.value === "") {
+            alert("Inserte un pokemón") 
+            return;
+        }
+        dataResults(inputSearch.value);
+    })
 });
 
 const dataResults = async pokemon => {
     try {
+        clearPokedex();
+        
         const data = await searchPokemon(pokemon);        
         const { name, order, height, weight, image, pokeStats, pokeTypes, chainEvolution, movements } = data;
         const movesSlicing = movements.slice(0,10).map(movement => movement);
@@ -24,8 +34,17 @@ const dataResults = async pokemon => {
         imageDisplay.src = './assets/img/pikachu_con_gorra.jpg';
         pokeName.textContent = error;
     }
+    
+}
 
-    inputSearch.textContent = "";
+function clearPokedex(){
+    clearResults(containerTypes);
+    clearResults(poke_evolutions);
+    clearResults(document.querySelectorAll('.move'))
+    otherStats[0].textContent = "";
+    otherStats[1].textContent = "";
+    inputSearch.value = "";
+    movesPanel.forEach( move => move.textContent = "");
 }
 
 function drawingResults(result){
@@ -40,7 +59,7 @@ function drawingResults(result){
 }
 
 function drawpokeMovements(movements){
-    const movesPanel = document.querySelector("#moves-panel").children;
+    // const movesPanel = document.querySelector("#moves-panel").children;
     for(let i = 0; i < movesPanel.length; i++){
         movesPanel[i].className = "move text";
         movesPanel[i].textContent = movements[i];
@@ -60,7 +79,6 @@ function creatingTypes(resultTypes){
 
 function drawPokeEvolutions(evolutions){
     // console.log(evolutions);
-    const poke_evolutions = document.getElementById("poke-evolutions");
 
     clearResults(poke_evolutions);
 
