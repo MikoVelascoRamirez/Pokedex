@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Press+Start+2P&family=VT323&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url('./assets/img/background-app.jpg');
+  background-repeat: repeat;
+  background-size: 200px 100px;
+}
+
+h1 {
+  margin: 30px auto;
+  width: fit-content;
+  font-family: "Pokemon";
+  color: #ffcb05;
+  -webkit-text-stroke: 2px #3a5ea3;
+  font-size: 60px;
+}
+
+.instructions{
+  color: white;
+  background: #40407a;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  font-family: 'VT323', monospace;
+}
+
+.container {
+  display: flex;
+  width: 70%;
+  height: 600px;
+  margin: 50px auto;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.container > * {
+  width: 50%;
+  height: auto;
+}
+
+.container > .cover-left {
+  border: 2px solid black;
+  border-right: 10px solid black;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: #dd082f;
+  padding: 15px 15px 20px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container > .cover-right {
+  border-top: none;
+}
+
+.container > .cover-right > * {
+  background-color: #dd082f;
+  width: 100%;
+}
+
+.container > .cover-right > .up {
+  height: 100px;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+  border-top: 2px solid black;
+}
+
+.container > .cover-right > .down {
+  height: calc(100% - 120px);
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  /* border-top: 2px solid black;     */
+  border-top-right-radius: 15px;
+  /* position: relative; */
+}
+
+.container > .cover-right > .up:after {
+  content: "";
+  position: absolute;
+  top: -3.5px;
+  right: 0;  
+  background-image: linear-gradient(
+    45deg,
+    #dd082f,
+    #dd082f 38%,
+    #000000 38%
+  );
+  width: 160px;
+  height: 100px;
+  border-top: 1px solid black;
+  /* border: 2px solid blue;      */
+}
+
+/* Ligths-up */
+.lights-up {
+  /* border: 1px solid black; */
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  /* padding: 15px; */
+}
+
+.lights-up > .led {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  border: 2px solid black;
+}
+
+.lights-up > .big {
+  width: 60px;
+  height: 60px;
+  background: #01fbfb;
+}
+
+.lights-up > .led:nth-child(2) {
+  background: #dd082f;
+}
+.lights-up > .led:nth-child(3) {
+  background: #ffcc02;
+}
+.lights-up > .led:nth-child(4) {
+  background: #2ff901;
+}
+
+/* Display */
+.display {
+  margin: 0 auto;
+  width: 80%;
+  height: 300px;
+  background: #dedede;
+  position: relative;
+  border-radius: 10px;
+}
+
+.display > .display-result {
+  margin: 35px auto;
+  width: 80%;
+  height: 200px;
+  border-radius: 8px;
+  background: #fff;
+  border: 2px solid #6c6b66;
+}
+
+#poke-result{
+  display: block;
+  margin: 7px auto; 
+  width: 150px;
+  height: 150px;
+}
+
+#poke-result-name{
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'VT323', monospace;
+}
+
+.display::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background-image: linear-gradient(45deg, #dd082f, #dd082f 50%, #dedede 50%);
+}
+
+/* Controls down */
+.controls-down {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+.controls-down > .spinner {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #222222;
+  border: 2px solid black;
+}
+
+.controls-down > .led-pill {
+  width: 70px;
+  height: 15px;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-left: -30px;
+}
+
+.controls-down > .led-pill:nth-child(2) {
+  background: #c70c13;
+}
+.controls-down > .led-pill:nth-child(3) {
+  background: #095378;
+}
+
+/* Joystick */
+.joystick {
+  background: #262626;
+  height: 90px;
+  width: 90px;
+  position: relative;
+  margin-top: 15px;
+}
+
+.joystick::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 30px #dd082f inset, 60px 0 #dd082f, 0 60px #dd082f,
+    60px 60px #dd082f;
+}
+
+.joystick::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #151515;
+  top: 38%;
+  left: 37%;
+}
+
+/* Input Pokemón */
+.input-pokemon {
+  width: 75%;
+  height: 45px;
+  border: 1px solid #fff;
+  background: #ffcc02;
+  margin: 0 50px;
+  border-radius: 10px;
+  padding-left: 10px;
+  outline: none;
+  font-family: "Press Start 2P", cursive;
+  color: #273c75;
+}
+
+.input-pokemon::placeholder {
+  color: #130f40;
+}
+
+/* ----------------------- Right part -----------------------*/
+
+/* Right part */
+
+.cover-right > .down {
+  width: 100%;
+  padding: 20px 20px 10px 50px;
+}
+
+/* Stats */
+.cover-right > .down > .stats {
+  width: 90%;
+  background: #032d29;
+  border-radius: 5px;
+  padding: 4px 10px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cover-right > .down > .stats > span > #types{
+  display: inline;
+  width: fit-content;
+  height: fit-content;
+  /* border: 1px solid white; */
+}
+
+.cover-right > .down > .stats > span > #types > .poke-type{
+  padding: 0px 6px;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  text-transform: capitalize;
+  margin-right: 5px;
+}
+
+.stats > label{
+  margin-top: 5px;
+}
+
+/* Tipo */
+.text {
+  color: #f9df03;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: "VT323", monospace;
+}
+
+.small {
+  font-size: 15px;
+  text-align: center;
+}
+
+/* Evolutions */
+#poke-evolutions{
+  width: 70%;
+  height: 65px;
+  display: flex;  
+  align-items: center;
+  /* border: 1px solid white; */
+}
+
+#poke-evolutions > article{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  height: 60px;
+  margin-right: 25px;
+}
+
+#poke-evolutions > article > img{
+  width: 40px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+#poke-evolutions > article > small{ 
+  font-size: 16px;
+}
+
+/* Estadistics */
+
+.cover-right > .down > .stats{
+  height: 185px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cover-right > .down > .stats > .estadistics {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto 10px;
+  /* border: 1px solid white; */
+}
+
+.cover-right > .down > .stats > .estadistics > div {
+  width: 10%;
+  height: 60px;
+  /* border: 1px solid white; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cover-right > .down > .stats > .estadistics > div > span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+}
+
+/* Panel movements */
+.moves-panel {
+  width: 90%;
+}
+
+.moves-panel > .results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+}
+
+.moves-panel > .results > .move {
+  background: #31a7f1;
+  width: 20%; 
+  height: 40px;
+  border: 1px solid #07489c;
+}
+
+.moves-panel > p {
+  text-align: center;
+  padding: 7px 0;
+}
+
+.moves-panel > #moves-panel > .move{
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  padding-top: auto;
+  overflow-wrap: break-word;
+}
+
+/* Decorations - pills */
+
+.pills {
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.pills > .led-pill {
+  width: 60px;
+  height: 12px;
+  background: #313131;
+  border-radius: 10px;
+  margin-left: 5px;
+}
+
+/* Decorations - others */
+.others{
+  width: 100%;
+  display: flex;
+  margin-top: 10px;
+}
+
+.others > .white{
+  background: #fff;
+  width: 73px;
+  height: 40px;
+  border: 1px solid #7a7980;
+}
+
+.others > .led{
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background-color: #c6bb44;
+  border: 2px solid black;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+/* Decorations - other-stats */
+
+.other-stats{
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.other-stats > p{
+  width: 39%;
+  border-radius: 5px;
+  background: #032d29;
+  padding: 10px 10px;
+  text-align: center;
+}

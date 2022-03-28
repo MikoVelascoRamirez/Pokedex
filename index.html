@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="responsive.css">
+    <title>Pokédex App</title>
+</head>
+<body>
+    <h1>Pokédex</h1>
+    <p class="instructions">Presiona el botón negro para buscar a tu pokemón</p>
+
+    <section class="container">
+        <div class="cover-left">
+            <section class="lights-up">
+                <div class="led big"></div>
+                <div class="led"></div>
+                <div class="led"></div>
+                <div class="led"></div>
+            </section>
+
+            <section class="display">
+                <article class="display-result">
+                    <img id="poke-result" src="./assets/img/pikachu_saludando.png">
+                    <footer id="poke-result-name">Hola, esta es tu pokédex...</footer>
+                </article>
+            </section>
+
+            <section class="controls-down">
+                <button class="spinner" id="btnSearch"></button>
+                <div class="led-pill"></div>
+                <div class="led-pill"></div>
+                <div class="joystick"></div>
+            </section>
+
+            <section>
+                <input type="text" class="input-pokemon" id="input-pokemon" placeholder="Busca tu pokemón">
+            </section>
+        </div>
+        <div class="cover-right">
+            <div class="up"></div>
+            <div class="down">
+                <section class="stats">
+                    <span class="text">Tipo: <div id="types"></div></span>                    
+                    <label class="text">Evoluciones</label>
+                    <div class="poke-evolutions" id="poke-evolutions">
+                    </div>
+                    <div class="estadistics" id="estadistics">   
+                        <div id="hp">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>                            
+                            <p class="text small">HP</p>
+                        </div>
+                        <div id="atk">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>                            
+                            <p class="text small">ATK</p>
+                        </div>
+                        <div id="def">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <p class="text small">DEF</p>
+                        </div>
+                        <div id="sp_atk">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <p class="text small">SP.ATK</p>
+                        </div>
+                        <div id="sp_def">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <p class="text small">SP.DEF</p>
+                        </div>
+                        <div id="speed">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <p class="text small">SPEED</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="moves-panel">
+                    <p class="text">Movements</p>
+                    <section class="results" id="moves-panel">
+                        <div class="move"></div>
+                        <div class="move"></div>
+                        <div class="move"></div>
+                        <div class="move"></div>
+                        <div class="move"></div>
+                        <div class="move"></div>
+                        <div class="move"></div>
+                        <div class="move"></div>
+                        <div class="move"></div>
+                        <div class="move"></div>    
+                    </section>
+
+                    <section class="pills">
+                        <div class="led-pill"></div>
+                        <div class="led-pill"></div>                        
+                    </section>
+
+                    <section class="others">
+                        <div class="white"></div>
+                        <div class="white"></div>
+
+                        <div class="led"></div>
+                    </section>
+
+                    <section class="other-stats" id="other-stats">
+                        <p class="weight text"></p>
+                        <p class="height text"></p>
+                    </section>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <script src="./destructuring_data.js" type="module"></script>
+    <script src="./index.js" type="module"></script>
+</body>
+</html>
